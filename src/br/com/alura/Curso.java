@@ -8,6 +8,7 @@ public class Curso {
     private String nomeDoInstrutor;
     private List<Aula> aulas = new LinkedList<>();
     private Set<Aluno> alunos = new HashSet<>();
+    private Map<Integer, Aluno> matriculaParaAluno = new HashMap<>();
 
     public Curso(String nome, String nomeDoInstrutor) {
         this.nome = nome;
@@ -53,6 +54,7 @@ public class Curso {
 
     public void matricula(Aluno aluno) {
         this.alunos.add(aluno);
+        this.matriculaParaAluno.put(aluno.getNumeroDeMatricula(), aluno);
     }
 
     public Set<Aluno> getAlunos() {
@@ -61,5 +63,13 @@ public class Curso {
 
     public boolean estaMatriculado(Aluno aluno) {
         return this.alunos.contains(aluno);
+    }
+
+    public Aluno buscaMatriculado(int numeroDeMatricula) {
+        if (!this.matriculaParaAluno.containsKey(numeroDeMatricula)) {
+            throw new NoSuchElementException("Aluno não encontrado. Matrícula: " + numeroDeMatricula);
+        }
+
+        return this.matriculaParaAluno.get(numeroDeMatricula);
     }
 }
