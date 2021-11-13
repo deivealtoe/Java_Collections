@@ -1,5 +1,7 @@
 ## Java Collections
 
+#### Repositório com o intuíto de conter informações "básicas" sobre pontos importantes
+
 ### List
 
 - Também chamada de coleção ordenada
