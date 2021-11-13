@@ -106,6 +106,7 @@
 - ```HashMap``` é o mais utilizado
 - ```LinkedHashMap``` armazena a ordem de inserção dos elementos
 - A chave deve ser única
+- Caso se insira uma chave duplicada, a anterior é substituída pela nova
 
 ```
   Curso javaColecoes = new Curso("Dominando as coleções do Java", "Paulo Silveira");
